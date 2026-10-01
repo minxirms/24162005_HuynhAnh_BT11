@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site-mesh>
+	<!-- Các đường dẫn không áp dụng khung Decorator -->
+	<mapping path="/login" exclude="true" />
+	<mapping path="/register" exclude="true" />
+	<mapping path="/forgot-password" exclude="true" />
+	<mapping path="/verify-account" exclude="true" />
+	<mapping path="/api/*" exclude="true" />
+	<mapping path="/uploads/*" exclude="true" />
+	<mapping path="/assets/*" exclude="true" />
+	<mapping path="/templates/*" exclude="true" />
+
+	<!-- Decorator cho Admin và User -->
+	<mapping path="/admin/*"
+		decorator="/WEB-INF/views/decorators/admin.jsp" />
+	<mapping path="/*"
+		decorator="/WEB-INF/views/decorators/user.jsp" />
+</site-mesh>
