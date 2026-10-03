@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<site-mesh>
-	<!-- Các đường dẫn không áp dụng khung Decorator -->
+<sitemesh>
+	<!-- Bỏ qua các trang static và authen -->
 	<mapping path="/login" exclude="true" />
 	<mapping path="/register" exclude="true" />
 	<mapping path="/forgot-password" exclude="true" />
@@ -10,9 +10,9 @@
 	<mapping path="/assets/*" exclude="true" />
 	<mapping path="/templates/*" exclude="true" />
 
-	<!-- Decorator cho Admin và User -->
-	<mapping path="/admin/*"
-		decorator="/WEB-INF/views/decorators/admin.jsp" />
-	<mapping path="/*"
-		decorator="/WEB-INF/views/decorators/user.jsp" />
-</site-mesh>
+	<!-- Layout Admin -->
+	<mapping path="/admin/*" decorator="/WEB-INF/views/decorators/admin.jsp" />
+
+	<!-- Layout User / Mặc định -->
+	<mapping path="/*" decorator="/WEB-INF/views/decorators/user.jsp" />
+</sitemesh>

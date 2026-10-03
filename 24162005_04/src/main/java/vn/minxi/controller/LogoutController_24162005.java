@@ -3,10 +3,7 @@ package vn.minxi.controller;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.*;
 
 @WebServlet(urlPatterns = { "/logout" })
 public class LogoutController_24162005 extends HttpServlet {
@@ -16,11 +13,10 @@ public class LogoutController_24162005 extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession(false);
 		if (session != null) {
-			// Hủy session đăng nhập
 			session.removeAttribute("account");
-			session.invalidate();
+			session.invalidate(); // Hủy toàn bộ Session
 		}
-		// Chuyển hướng về trang đăng nhập
+		// Chuyển hướng về lại trang đăng nhập
 		resp.sendRedirect(req.getContextPath() + "/login");
 	}
 }

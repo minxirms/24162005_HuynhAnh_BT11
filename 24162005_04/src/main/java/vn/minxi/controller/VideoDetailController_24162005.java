@@ -1,15 +1,21 @@
 package vn.minxi.controller;
 
-import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import vn.minxi.dao.IVideoDao_24162005;
 import vn.minxi.dao.impl.VideoDaoImpl_24162005;
 import vn.minxi.entity.Video_24162005;
 
+import java.io.IOException;
+
 @WebServlet(urlPatterns = { "/video/detail" })
 public class VideoDetailController_24162005 extends HttpServlet {
-	private VideoDaoImpl_24162005 videoDao = new VideoDaoImpl_24162005();
+	private static final long serialVersionUID = 1L;
+	private IVideoDao_24162005 videoDao = new VideoDaoImpl_24162005();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
